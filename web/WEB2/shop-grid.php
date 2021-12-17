@@ -62,10 +62,10 @@
 							<ul class="meninmenu d-flex justify-content-start">
 								<li class="drop with--one--item"><a href="index.php">Trang Chủ</a></li>
 								<li class="drop"><a href="./shop-grid.php?tranghientai=1">Cửa Hàng</a></li>
-								<li class="drop"><a href="./shop-grid.php?tranghientai=1">Sách</a>
+								<li class="drop"><a href="./shop-grid.php?tranghientai=1">THỂ LOẠI</a>
 									<div class="megamenu mega02">
 										<ul class="item item01">
-											<li class="title">Thể Loại</li>
+											 <!--<li class="title">Thể Loại</li> -->
 											<!-- <li><a href="#">Sách Kỹ Thuật Lập Trình </a></li>
 											<li><a href="#">Sách Thuật Toán và Giải Thuật </a></li>
 											<li><a href="#">Sách Tiếng Anh Chuyên Ngành </a></li> -->
@@ -308,7 +308,7 @@
 										$result = mysqli_query($conn, $sql);
 												
 										// số lượng sản phẩm
-										$sosptrentrang  = 3;
+										$sosptrentrang  =  6;
 										$tongsosanpham = mysqli_num_rows($result);
 										$sotrang = ceil($tongsosanpham / $sosptrentrang);
 										$vitri = ($tranghientai-1)*$sosptrentrang; 
@@ -332,7 +332,7 @@
 										$result = mysqli_query($conn, $sql);
 												
 										// số lượng sản phẩm
-										$sosptrentrang  = 6;
+										$sosptrentrang  = 12;
 										$tongsosanpham = mysqli_num_rows($result);
 										$sotrang = ceil($tongsosanpham / $sosptrentrang);
 										$vitri = ($tranghientai-1)*$sosptrentrang; 

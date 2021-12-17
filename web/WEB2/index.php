@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Trang Chủ | Cửa hàng sách</title>
+	<title>Trang Chủ | Cửa hàng BoardGame</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -50,13 +50,13 @@
 							<ul class="meninmenu d-flex justify-content-start">
 								<li class="drop with--one--item"><a href="index.php">Trang Chủ</a></li>
 								<li class="drop"><a href="./shop-grid.php?tranghientai=1">Cửa Hàng</a></li>
-								<li class="drop"><a href="./shop-grid.php?tranghientai=1">Sách</a>
+								<li class="drop"><a href="./shop-grid.php?tranghientai=1">BoardGame</a>
 									<div class="megamenu mega02">
 										<ul class="item item01">
 											<li class="title">Thể Loại</li>
-											<!-- <li><a href="#">Sách Kỹ Thuật Lập Trình </a></li>
-											<li><a href="#">Sách Thuật Toán và Giải Thuật </a></li>
-											<li><a href="#">Sách Tiếng Anh Chuyên Ngành </a></li> -->
+											<!-- <li><a href="#">BoardGame Kỹ Thuật Lập Trình </a></li>
+											<li><a href="#">BoardGame Thuật Toán và Giải Thuật </a></li>
+											<li><a href="#">BoardGame Tiếng Anh Chuyên Ngành </a></li> -->
 											<?php 
 												$conn = mysqli_connect("localhost","root","","webdb");
 												$sql = "select idtheloai,tentheloai from tbltheloai where HienThi = 0";			
@@ -65,7 +65,7 @@
 
 
 												while ( $row = mysqli_fetch_array($result) ) {
-													// đếm số lượng sách
+													// đếm số lượng BoardGame
 													$sql2 = "select idtheloai from tblsach where idtheloai = '".$row['idtheloai']."' and HienThi = 0";			
 													mysqli_query($conn, "SET NAMES 'utf8'");
 													$result2 = mysqli_query($conn, $sql2);
@@ -165,9 +165,9 @@
 								<li><a href="#">Thể Loại</a>
 								<ul class="item item01">
 											<li class="title">Thể Loại</li>
-											<!-- <li><a href="#">Sách Kỹ Thuật Lập Trình </a></li>
-											<li><a href="#">Sách Thuật Toán và Giải Thuật </a></li>
-											<li><a href="#">Sách Tiếng Anh Chuyên Ngành </a></li> -->
+											<!-- <li><a href="#">BoardGame Kỹ Thuật Lập Trình </a></li>
+											<li><a href="#">BoardGame Thuật Toán và Giải Thuật </a></li>
+											<li><a href="#">BoardGame Tiếng Anh Chuyên Ngành </a></li> -->
 											<?php 
 												$conn = mysqli_connect("localhost","root","","webdb");
 												$sql = "select idtheloai,tentheloai from tbltheloai where HienThi = 0";			
@@ -176,7 +176,7 @@
 
 
 												while ( $row = mysqli_fetch_array($result) ) {
-													// đếm số lượng sách
+													// đếm số lượng BoardGame
 													$sql2 = "select idtheloai from tblsach where idtheloai = '".$row['idtheloai']."'";			
 													mysqli_query($conn, "SET NAMES 'utf8'");
 													$result2 = mysqli_query($conn, $sql2);
@@ -248,7 +248,7 @@
 	            		<div class="col-lg-12">
 	            			<div class="slider__content">
 		            			<div class="contentbox">
-		            				<h2>Mua những <span>Quyển sách </span></h2>
+		            				<h2>Mua những <span>Quyển BoardGame </span></h2>
 		            				<h2>yêu thích của <span>Bạn </span></h2>
 		            				<h2>tại <span>Đây </span></h2>
 				                   	<a class="shopbtn" href="#">MUA NGAY</a>
@@ -337,7 +337,7 @@
 							<h2>Ở lại với chúng tôi!</h2>
 						</div>
 						<div class="newsletter__block text-center">
-							<p>Đăng kí để được nhận thông báo mới nhất khi chúng tôi phát hành sách mới cũng như nhận được những ưu đãi đặc biệt dành riêng cho quý khách.</p>
+							<p>Đăng kí để được nhận thông báo mới nhất khi chúng tôi phát hành BoardGame mới cũng như nhận được những ưu đãi đặc biệt dành riêng cho quý khách.</p>
 							<form action="#">
 								<div class="newsletter__box">
 									<input type="email" placeholder="Điền e-mail của bạn">
@@ -365,7 +365,7 @@
 					<div class="col-md-6 col-lg-4 col-sm-12">
 						<div class="post__itam">
 							<div class="content">
-								<h3><a href="#">Những hoạt động quốc tế về sách ở Frankfurt </a></h3>
+								<h3><a href="#">Những hoạt động quốc tế về BoardGame ở Frankfurt </a></h3>
 								<p>Chúng tôi tự hào công bố phiên bản đầu tiên của tin tức frankfurt.</p>
 								<div class="post__time">
 									<span class="day">Dec 09, 00</span>
@@ -382,7 +382,7 @@
 					<div class="col-md-6 col-lg-4 col-sm-12">
 						<div class="post__itam">
 							<div class="content">
-								<h3><a href="#">Việc đọc sách sẽ giúp bạn tiếp thu được những thông tin quan trọng.</a></h3>
+								<h3><a href="#">Việc đọc BoardGame sẽ giúp bạn tiếp thu được những thông tin quan trọng.</a></h3>
 								<p>Tìm ra những thông tin bạn cần để cải thiện sự trải nghiệm của bản thân bạn.	</p>
 								<div class="post__time">
 									<span class="day">Mar 25, 00</span>
@@ -399,8 +399,8 @@
 					<div class="col-md-6 col-lg-4 col-sm-12">
 						<div class="post__itam">
 							<div class="content">
-								<h3><a href="#">Hội chợ sách London sẽ được tổ chức một cách thú vị </a></h3>
-								<p>Hội chợ sách London là nơi bạn có thể mua được những quyển sách hay ho và thú vị, hợp với mọi độ tuổi.</p>
+								<h3><a href="#">Hội chợ BoardGame London sẽ được tổ chức một cách thú vị </a></h3>
+								<p>Hội chợ BoardGame London là nơi bạn có thể mua được những quyển BoardGame hay ho và thú vị, hợp với mọi độ tuổi.</p>
 								<div class="post__time">
 									<span class="day">Jan 14, 18</span>
 									<div class="post-meta">

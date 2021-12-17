@@ -51,13 +51,13 @@
 							<ul class="meninmenu d-flex justify-content-start">
 								<li class="drop with--one--item"><a href="index.php">Trang Chủ</a></li>
 								<li class="drop"><a href="./shop-grid.php?tranghientai=1">Cửa Hàng</a></li>
-								<li class="drop"><a href="./shop-grid.php?tranghientai=1">Sách</a>
+								<li class="drop"><a href="./shop-grid.php?tranghientai=1">BoardGame</a>
 									<div class="megamenu mega02">
 										<ul class="item item01">
 											<li class="title">Thể Loại</li>
-											<!-- <li><a href="#">Sách Kỹ Thuật Lập Trình </a></li>
-											<li><a href="#">Sách Thuật Toán và Giải Thuật </a></li>
-											<li><a href="#">Sách Tiếng Anh Chuyên Ngành </a></li> -->
+											<!-- <li><a href="#">BoardGame Kỹ Thuật Lập Trình </a></li>
+											<li><a href="#">BoardGame Thuật Toán và Giải Thuật </a></li>
+											<li><a href="#">BoardGame Tiếng Anh Chuyên Ngành </a></li> -->
 											<?php 
 												$conn = mysqli_connect("localhost","root","","webdb");
 												$sql = "select idtheloai,tentheloai from tbltheloai where HienThi = 0";			
@@ -66,7 +66,7 @@
 
 
 												while ( $row = mysqli_fetch_array($result) ) {
-													// đếm số lượng sách
+													// đếm số lượng BoardGame
 													$sql2 = "select idtheloai from tblsach where idtheloai = '".$row['idtheloai']."'";			
 													mysqli_query($conn, "SET NAMES 'utf8'");
 													$result2 = mysqli_query($conn, $sql2);
@@ -147,9 +147,9 @@
 								<li><a href="#">Thể Loại</a>
 								<ul class="item item01">
 											<li class="title">Thể Loại</li>
-											<!-- <li><a href="#">Sách Kỹ Thuật Lập Trình </a></li>
-											<li><a href="#">Sách Thuật Toán và Giải Thuật </a></li>
-											<li><a href="#">Sách Tiếng Anh Chuyên Ngành </a></li> -->
+											<!-- <li><a href="#">BoardGame Kỹ Thuật Lập Trình </a></li>
+											<li><a href="#">BoardGame Thuật Toán và Giải Thuật </a></li>
+											<li><a href="#">BoardGame Tiếng Anh Chuyên Ngành </a></li> -->
 											<?php 
 												$conn = mysqli_connect("localhost","root","","webdb");
 												$sql = "select idtheloai,tentheloai from tbltheloai where HienThi = 0";			
@@ -158,7 +158,7 @@
 
 
 												while ( $row = mysqli_fetch_array($result) ) {
-													// đếm số lượng sách
+													// đếm số lượng BoardGame
 													$sql2 = "select idtheloai from tblsach where idtheloai = '".$row['idtheloai']."'";			
 													mysqli_query($conn, "SET NAMES 'utf8'");
 													$result2 = mysqli_query($conn, $sql2);
