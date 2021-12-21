@@ -81,6 +81,8 @@
 			<a href="main.php?act=onLeft&name=ThongKe"><div class="trai" >Thống Kê</div></a>
 			<a href="main.php?act=onLeft&name=SanPham&tranghientai=1"><div class="trai" >Sản Phẩm</div></a>
 			<a href="main.php?act=onLeft&name=xuLiSanPham"><div class="trai" >Thêm Sản Phẩm</div></a>
+			<a href="main.php?act=onLeft&name=emaildk"><div class="trai" >Email đăng ký</div></a>
+			<a href="main.php?act=onLeft&name=phanhoi"><div class="trai" >Phản hồi ý kiến</div></a>
 			<?php
 			}
 			?>
@@ -105,6 +107,10 @@
 							include 'xuLiSanPham.php';
 						if ( $_GET['name'] == 'xuLiSanPham' )
 							include 'SanPham.php';
+						if ( $_GET['name'] == 'emaildk' )
+							include 'emaildk.php';
+						if ( $_GET['name'] == 'phanhoi' )
+							include 'phanhoi.php';
 					}
 					if ( isset ( $_GET['editSanPham']))
 						include  'editSanPham.php';	

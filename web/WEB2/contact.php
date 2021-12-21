@@ -28,6 +28,18 @@
 	<script src="js/vendor/modernizr-3.5.0.min.js"></script>
 </head>
 <body>
+<?php
+        if (isset($_GET['hoanthanh'])){
+            // This is in the PHP file and sends a Javascript alert to the client
+			$message = "Gửi phản hồi thành công";
+             echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+        if (isset($_GET['thatbai'])) {
+             // This is in the PHP file and sends a Javascript alert to the client
+             $message = "Gửi phản hồi thất bại";
+             echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+    ?>
 	<!--[if lte IE 9]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 	<![endif]-->
@@ -221,26 +233,22 @@
         		<div class="row">
         			<div class="col-lg-8 col-12">
         				<div class="contact-form-wrap">
-        					<h2 class="contact__title">Giữ Liên Lạc Với Chúng Tôi</h2>
+        					<h2 class="contact__title">Phản hổi cho công ty</h2>
         					<p>Nhóm 20
 								Thương mại điện tử 2021
 							</p>
-                            <form id="contact-form" action="#" method="post">
+							<div class="newsletter__block text-center">
+						</div>
+                            <form name="frmdkemail" action="xulyphanhoi.php" method="GET">
                                 <div class="single-contact-form space-between">
-                                    <input type="text" name="firstname" placeholder="Họ và Lót*">
-                                    <input type="text" name="lastname" placeholder="Tên*">
-                                </div>
-                                <div class="single-contact-form space-between">
-                                    <input type="email" name="email" placeholder="Email*">
-                                    <input type="text" name="website" placeholder="Website*">
-                                </div>
-                                <div class="single-contact-form">
-                                    <input type="text" name="subject" placeholder="Địa Chỉ*">
+                                    <input type="text" name="name" placeholder="Họ và Tên">
+                                    <input type="email" name="email" placeholder="Email">
                                 </div>
                                 <div class="single-contact-form message">
                                     <textarea name="message" placeholder="Gửi lại lời nhắn của bạn ở đây.."></textarea>
                                 </div>
                                 <div class="contact-btn">
+									<button name="button" type="submit">Gửi</button>
                                     <!-- <button type="submit">Gửi Email</button> -->
                                 </div>
                             </form>

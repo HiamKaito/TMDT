@@ -28,6 +28,18 @@
 </head>
 <body>
 <?php session_start(); ?>
+	<?php
+        if (isset($_GET['hoanthanh'])){
+            // This is in the PHP file and sends a Javascript alert to the client
+			$message = "Đăng ký thành công";
+             echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+        if (isset($_GET['thatbai'])) {
+             // This is in the PHP file and sends a Javascript alert to the client
+             $message = "Đăng ký thất bại";
+             echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+    ?>
 	<!--[if lte IE 9]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 	<![endif]-->
@@ -338,10 +350,10 @@
 						</div>
 						<div class="newsletter__block text-center">
 							<p>Đăng kí để được nhận thông báo mới nhất khi chúng tôi phát hành BoardGame mới cũng như nhận được những ưu đãi đặc biệt dành riêng cho quý khách.</p>
-							<form action="#">
+							<form  name="frmdkemail" action="xulydangkythongtinthem.php" method="GET">
 								<div class="newsletter__box">
-									<input type="email" placeholder="Điền e-mail của bạn">
-									<button >Đăng kí</button>
+									<input type="email"  name="email" placeholder="Điền e-mail của bạn">
+									<button name="button" type="submit">Đăng kí</button>
 								</div>
 							</form>
 						</div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 19, 2020 lúc 10:22 AM
+-- Thời gian đã tạo: Th12 21, 2021 lúc 09:20 AM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
 -- Phiên bản PHP: 7.4.3
 
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `webdb`
 --
-CREATE DATABASE IF NOT EXISTS `webdb` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `webdb`;
 
 -- --------------------------------------------------------
 
@@ -30,7 +28,6 @@ USE `webdb`;
 -- Cấu trúc bảng cho bảng `tblchitiethd`
 --
 
-DROP TABLE IF EXISTS `tblchitiethd`;
 CREATE TABLE `tblchitiethd` (
   `MaHD` varchar(30) NOT NULL,
   `idSach` varchar(30) NOT NULL,
@@ -43,12 +40,41 @@ CREATE TABLE `tblchitiethd` (
 --
 
 INSERT INTO `tblchitiethd` (`MaHD`, `idSach`, `SoLuong`, `GiaBan`) VALUES
-('HDprohz@gmail.com0', 'id10', '1', '800'),
-('HDprohz@gmail.com0', 'id2', '3', '500'),
-('HDprohz@gmail.com0', 'id6', '1', '600'),
-('HDprohz@gmail.com1', 'id1', '1', '200'),
-('HDprohz@gmail.com1', 'id8', '1', '900'),
-('HDtangchichung@gmail.com1', 'id7', '1', '800');
+('HD1', '194', '1', '123'),
+('HD1', '52', '1', '1000'),
+('HD1', 'id7', '1', '800'),
+('HD2', '224', '10', '123'),
+('HD2', 'id2', '4', '500'),
+('HD3', 'id8', '1', '900'),
+('HD4', 'id8', '1', '900'),
+('HD5', '110', '1', '33333'),
+('HD5', '194', '2', '123');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbldangkytaikhoan`
+--
+
+CREATE TABLE `tbldangkytaikhoan` (
+  `email` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbldangkytaikhoan`
+--
+
+INSERT INTO `tbldangkytaikhoan` (`email`) VALUES
+(''),
+('a@gmail.com'),
+('aasd@gmail.com'),
+('abcdef@gmail.com'),
+('boardgame@gmail.com'),
+('helloban@gmail.com'),
+('tangchichung@gmail.com'),
+('tester@gmail.com'),
+('tmdt@gmail.com'),
+('xinchaoban@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -56,7 +82,6 @@ INSERT INTO `tblchitiethd` (`MaHD`, `idSach`, `SoLuong`, `GiaBan`) VALUES
 -- Cấu trúc bảng cho bảng `tblhoadon`
 --
 
-DROP TABLE IF EXISTS `tblhoadon`;
 CREATE TABLE `tblhoadon` (
   `MaHD` varchar(30) NOT NULL,
   `Email` varchar(30) NOT NULL,
@@ -71,9 +96,34 @@ CREATE TABLE `tblhoadon` (
 --
 
 INSERT INTO `tblhoadon` (`MaHD`, `Email`, `TongTien`, `TinhTrang`, `NgayThang`, `Email_NhanVien`) VALUES
-('HDprohz@gmail.com0', 'prohz@gmail.com', '2900', 'Đã hoàn thành', '2020-06-16', 'nhanvien@gmail.com'),
-('HDprohz@gmail.com1', 'prohz@gmail.com', '1100', 'Đã hoàn thành', '2020-06-16', 'nhanvien@gmail.com'),
-('HDtangchichung@gmail.com1', 'tangchichung@gmail.com', '800', 'Đã hoàn thành', '2020-06-19', 'nhanvien@gmail.com');
+('HD1', 'tangchichung@gmail.com', '123', 'Đã hoàn thành', '2020-06-19', 'nhanvien@gmail.com'),
+('HD2', 'tangchichung@gmail.com', '3230', 'Đã hoàn thành', '2020-06-19', 'nhanvien@gmail.com'),
+('HD3', 'nhanvien@gmail.com', '900', 'Đã hoàn thành', '2020-06-19', 'nhanvien@gmail.com'),
+('HD4', 'nhanvien@gmail.com', '900', 'Đang thanh toán', '2020-06-19', 'nhanvien@gmail.com'),
+('HD5', 'nhanvien@gmail.com', '33579', 'Đang xử lý', '2021-12-21', 'tangchichung@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tblphanhoi`
+--
+
+CREATE TABLE `tblphanhoi` (
+  `hoten` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phanhoi` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `tblphanhoi`
+--
+
+INSERT INTO `tblphanhoi` (`hoten`, `email`, `phanhoi`) VALUES
+('tăng chí chung', 'tangchichung@gmail.com', 'website đẹp quá, cho 10 điểm nè <3'),
+('Nguyễn Tuấn Anh', 'prohzgod@gmail.com', 'web site tốt thế, cho t xin nhé'),
+('Nguyễn Văn A', 'test@gmail.com', 'cho mình xin con rubik được không'),
+('lê long', 'lelong@gmail.com', 'web site vip pro max\r\nadasdasdas sad asd asd asd as'),
+('haker', 'haker@gmail.haker', 'mình cáo dữ liệu r, có thông tin r, cho t xin 5 tỉ ko pay web\r\nmình cáo dữ liệu r, có thông tin r, cho t xin 5 tỉ ko pay web\r\nmình cáo dữ liệu r, có thông tin r, cho t xin 5 tỉ ko pay web\r\nmình cáo dữ liệu r, có thông tin r, cho t xin 5 tỉ ko pay web');
 
 -- --------------------------------------------------------
 
@@ -81,7 +131,6 @@ INSERT INTO `tblhoadon` (`MaHD`, `Email`, `TongTien`, `TinhTrang`, `NgayThang`, 
 -- Cấu trúc bảng cho bảng `tblsach`
 --
 
-DROP TABLE IF EXISTS `tblsach`;
 CREATE TABLE `tblsach` (
   `idSach` varchar(30) NOT NULL,
   `tensach` varchar(30) NOT NULL,
@@ -97,20 +146,85 @@ CREATE TABLE `tblsach` (
 --
 
 INSERT INTO `tblsach` (`idSach`, `tensach`, `idTheLoai`, `GiaBan`, `urlHinh`, `ThongTin`, `HienThi`) VALUES
-('132', 'Kỹ Thuật', '3', '2', 'sach9.png', 'GG!', 1),
-('194', 'AllahuAkBa', '3', '123', 'mum.jfif', 'Lập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập trình mà các nhà phát triển tuân...', 0),
-('224', 'adfdasf', '2', '123', 'q4.jpeg', 'Lập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập trình mà các nhà phát triển tuân...', 0),
-('52', 'Kỹ Thuật Nâng Cao', '1', '1000', 'tokill.jpg', 'aaaaaaaaaaaaa\r\n', 0),
-('id1', 'Lập trình C và C++', '1', '200', 'sach1.jpg', 'Lập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập trình mà các nhà phát triển tuân...', 0),
-('id10', 'The Great Convergence', '3', '800', 'hp.jpg', 'The Great Convergence: Information Technology and the New Globalization [Baldwin, Richard] on Amazon.com. *FREE* shipping on qualifying offers.', 0),
-('id2', 'Lập trình Java', '1', '500', 'sach2.jpg', 'Lập trình Java sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nava là một ngôn ngữ lập trình hướng đối tượng và dựa trên các lớp. Khác với phần lớn ngôn ngữ lập trình thông thường, thay vì biên dịch mã', 0),
-('id3', 'Lập trình C#', '1', '400', 'sach3.png', 'Lập trình C# sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC# là ngôn ngữ lập trình hướng đối tượng, được Microsoft phát triển dựa trên nền tảng của ngôn ngữ Java và C++... Hướng dẫn lập trình C# cho n', 0),
-('id4', 'Lập trình PyThon', '1', '450', 'sach4.jfif', 'Lập trình PyThon sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình.\r\nPython là một ngôn ngữ lập trình bậc cao cho các mục đích lập trình đa năng, do Guido van Rossum tạo ra và lần đầu ra mắt vào năm 1991', 0),
-('id5', 'Cấu trúc dữ liệu và giải thuật', '2', '600', 'sach5.jfif', 'Cấu trúc dữ liệu và giải thuật giúp bạn cứng cỏi hơn.\r\nCấu trúc dữ liệu và giải thuật (Data Structure and Algorithms) - Học Cấu trúc dữ liệu & giải thuật với ngôn ngữ C, C++ và Java theo các bước cơ b', 0),
-('id6', 'Các bài toán Quy Hoạch Động', '2', '600', 'sach6.jpg', 'Trong ngành khoa học máy tính, quy hoạch động là một phương pháp giảm thời gian chạy của các thuật toán thể hiện các tính chất của các bài toán con gối nhau và cấu trúc con tối ưu.', 0),
-('id7', 'Clean Code', '3', '800', 'sach7.jpg', 'Code của bạn được coi là “Clean” nếu có thể được hiểu một cách rõ ràng bởi các thành viên trong team. Clean code có thể đọc và phát triển bởi developer khác, với sự dễ hiểu, dễ thay đổi, dễ bảo trì, d', 0),
-('id8', 'Java Core 1st Edition', '3', '900', 'sach8.jpg', 'Core Java for the Impatient (1st Edition) [Cay S. Horstmann] on Amazon.com. *FREE* shipping on qualifying offers. Paperback International Edition ... Same .', 0),
-('id9', 'Fundamentals of IT', '3', '700', 'sach9.png', 'IT Fundamentals. IT Fundamentals includes computer hardware, computer software, networking, security, and basic IT literacy. This course comprises 15 lessons covering IT fundamentals. ... The course a', 0);
+('110', 'Rubik ảo', '5', '33333', '42aaec65ce21ad9a15dd310f8c219fcf.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('123', 'DUEL POWER COLLECTOR YUGIOH - ', '17', '3652', 'DUPO-Poster-EN.jpg', '', 0),
+('130', 'GHOSTS FROM THE PAST YUGIOH CO', '17', '32131', '20200403_072115000_iOS Copy.jpg', '', 0),
+('132', 'Monster Box', '1', '99999999', 'Totem.png', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 1),
+('137', 'Cờ Vua Nam Châm Chất Lượng Cao', '6', '250', 'sp24.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('146', '7 Wonders Duel (US)', '15', '3321', '7_w1495451926.jpg', '', 0),
+('149', 'Catan', '9', '241', 'Catan.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('154', 'Can’t Stop01', '13', '63', 'Can’t Stop01.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('159', 'UNO', '12', '333', 'Uno01.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('165', 'Hero Quest', '10', '900', 'Hero Quest.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('178', 'Cờ Shogi', '6', '111', 'sp27.JPG', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('18', 'Ma sói normal', '7', '300', 'MaSoi.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('184', 'Cờ Tỷ Phú Việt Nam', '1', '9999999', 'sp28.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('190', 'Root', '1', '1600', '', 'Star Wars: The Card Game - Edge Of Darkness Expansion', 1),
+('194', 'AllahuAkBa', '3', '123', 'mum.jfif', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 1),
+('202', 'Pylos Mini (US) - Cuộc Thi Đặt', '15', '311', 'pic1599717077.jpg', '', 0),
+('210', 'Zombicide', '14', '666', 'Zombicide.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('217', 'Pandemic', '14', '33333', 'Pandemic01.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('224', 'adfdasf', '2', '123', 'q4.jpeg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 1),
+('233', 'DUEL OVERLOAD COLLECTION BOX -', '17', '9999', '20200403_072115000_iOS Copy.jpg', '', 0),
+('237', 'Star Wars: The Card Game - Edg', '15', '3333', '6741530845859.png', 'Star Wars: The Card Game - Edge Of Darkness ExpansionStar Wars: The Card Game - Edge Of Darkness Expansion', 0),
+('244', 'GHOSTS FROM THE PAST YUGIOH CO', '17', '4500', '_DSC2605 Copy.jfif', '', 0),
+('256', 'MeoNo ojae', '12', '3213213', 'MeoNo02.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('260', 'Cờ Checkers Nam Châm (Cờ Đam)', '6', '240', 'sp22.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('261', 'Cờ Domino đen cao cấp', '6', '57', 'sp25.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('271', 'Ma sói Gold', '7', '9999', 'MaSoi01.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('272', 'Yahtzee erro', '13', '300', 'Yahtzee03.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('277', 'Liar’s Dice', '13', '999', 'Liar’s Dice.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('284', 'Rubik trụ', '1', '3000', '2c96beaab6cacffd6d2db144b3800fa2.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('290', 'Yahtzee noramal', '13', '600', 'Yahtzee01.jpeg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('298', 'Spot it', '11', '3222', 'Spot_it.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('316', 'Bai Tay Den', '12', '200', 'BaiTay02.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('320', 'Qwirkle', '8', '999', 'Qwirkle.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('331', 'Arkham Horor', '10', '600', 'Arkham Horor.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('345', 'Geistes', '11', '20', 'Geistes.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('356', 'HỘP BÀI YUGIOH MAXIMUM GOLD YU', '17', '321312', '20201209_153009000_iOS Copy.jpg', 'HỘP BÀI YUGIOH MAXIMUM GOLD YUGIOH - NHẬP KHẨU HOA KỲ USA', 0),
+('365', 'Geistes ver 2 edition 3', '11', '600', 'Geistes02.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('367', 'Bai Tay', '12', '10', 'BaiTay01.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('369', 'ALBUM SƯU TẬP YUGIOH DARK MAGI', '17', '3333', '_DSC7040 Copy.jfif', '', 0),
+('371', 'Dungeons & Dragons', '10', '700', 'Dungeons _ Dragons.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('372', 'Rubik tam giac', '5', '300', 'sp19.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('376', 'Liar’s Dice GOLD', '13', '989', 'Liar’s Dice01.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('377', 'Clank! (US)', '15', '333', 'cla1499245755.jpg', 'Clank! (US)', 0),
+('389', 'GÓI THẺ BÀI YUGIOH MEGA PACK -', '17', '300', '_DSC4327 Copy.jfif', '', 0),
+('395', 'Geistes ver 2 edtion 1', '11', '333', 'Geistes01.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('396', 'Carcassonne', '8', '400', 'Carcassonne.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('414', 'Rubik 3x3', '5', '1000', 'sp12.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('416', 'Tam Quốc Sát - Vương Triều Chi', '15', '9999', 'heu1620196650.png', '', 0),
+('419', 'Halli Galli GOLD', '11', '9999', 'Halli_Galli02.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('420', 'Warhammer', '10', '1000', 'Warhammer.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('429', 'MeoNo', '12', '3231', 'MeoNo.png', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('431', 'Liar’s Dice DIAMOND', '13', '99999', 'Liar’s Dice02.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('435', 'UNO', '12', '221', 'Uno02.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('439', 'Bai Tay roi rac', '12', '900', 'BaiTay03.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('441', 'Connect 4 - Cờ Thả', '6', '180', 'sp26.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('451', 'Quarto Mini (US) - Chọn Cờ Cho', '15', '3333', '', 'Quarto Mini (US) - Chọn Cờ Cho Đối Thủ', 1),
+('455', 'Halli Galli', '11', '900', 'Halli_Galli.jpg.crdownload.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('464', 'Spot it 2', '1', '3232', 'Spot_it01.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 1),
+('465', 'Ma sói edition', '7', '600', 'MaSoi02.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('476', 'Forbidden Island', '14', '222', 'Forbidden Island.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('477', 'Wingspan (US)', '15', '1700', 'win1557995495.jpg', 'Wingspan (US)', 0),
+('486', 'Rubik 2x2', '5', '200', 'sp13.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('490', 'Scythe (US)', '15', '4321', 'art1547801129.png', '', 0),
+('493', 'Can’t Stop02', '13', '80', 'Can’t Stop02.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('52', 'Kỹ Thuật Nâng Cao', '1', '1000', 'tokill.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 1),
+('60', 'Monopoly', '9', '999', 'Monopoly.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('74', 'HỘP BÀI YUGIOH MAXIMUM GOLD YU', '17', '99999', 'MAGO-BoxNA.jpg', '', 0),
+('83', 'Yahtzee begin', '13', '321', 'Yahtzee02.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('89', 'Yahtzee', '13', '99', 'Yahtzee.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 0),
+('id1', 'Lập trình C và C++', '1', '200', 'sach1.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 1),
+('id10', 'The Great Convergence', '3', '800', 'hp.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 1),
+('id2', 'Lập trình Java', '1', '500', 'sach2.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 1),
+('id3', 'Lập trình C#', '1', '400', 'sach3.png', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 1),
+('id4', 'Lập trình PyThon', '1', '450', 'sach4.jfif', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 1),
+('id5', 'Cấu trúc dữ liệu và giải thuật', '2', '600', 'sach5.jfif', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 1),
+('id6', 'Các bài toán Quy Hoạch Động', '2', '600', 'sach6.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 1),
+('id7', 'Clean Code', '3', '800', 'sach7.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 1),
+('id8', 'Java Core 1st Edition', '3', '900', 'sach8.jpg', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 1),
+('id9', 'Fundamentals of IT', '3', '700', 'sach9.png', 'Nhóm 20 TMDT, Thứ 5 Tiết 6 7 8 9\r\nLập trình C và C++ sẽ giúp bạn hiểu rõ hơn về vấn đề lập trình\r\nC là một ngôn ngữ thủ tục, trong khi C++ là hướng đối tượng. Tính năng này đề cập đến phong cách lập t', 1);
 
 -- --------------------------------------------------------
 
@@ -118,7 +232,6 @@ INSERT INTO `tblsach` (`idSach`, `tensach`, `idTheLoai`, `GiaBan`, `urlHinh`, `T
 -- Cấu trúc bảng cho bảng `tbltaikhoan`
 --
 
-DROP TABLE IF EXISTS `tbltaikhoan`;
 CREATE TABLE `tbltaikhoan` (
   `email` varchar(30) NOT NULL,
   `matkhau` varchar(30) NOT NULL,
@@ -131,7 +244,7 @@ CREATE TABLE `tbltaikhoan` (
 --
 
 INSERT INTO `tbltaikhoan` (`email`, `matkhau`, `capbac`, `Del`) VALUES
-('adjj@gmail.com', '123', 'nhanvien', 0),
+('adjj@gmail.com', '123', 'nhanvien', 1),
 ('admin@gmail.com', 'admin', 'admin', 0),
 ('hacker@gmail.com', '123', 'khachhang', 1),
 ('khachhang@gmail.com', 'khachhang', 'khachhang', 0),
@@ -145,7 +258,6 @@ INSERT INTO `tbltaikhoan` (`email`, `matkhau`, `capbac`, `Del`) VALUES
 -- Cấu trúc bảng cho bảng `tbltheloai`
 --
 
-DROP TABLE IF EXISTS `tbltheloai`;
 CREATE TABLE `tbltheloai` (
   `idTheLoai` varchar(30) NOT NULL,
   `tenTheLoai` varchar(30) NOT NULL,
@@ -157,9 +269,22 @@ CREATE TABLE `tbltheloai` (
 --
 
 INSERT INTO `tbltheloai` (`idTheLoai`, `tenTheLoai`, `HienThi`) VALUES
-('1', 'Sách Kỹ Thuật Lập Trình', 0),
-('2', 'Sách Thuật Toán Và Giải Thuật', 0),
-('3', 'Sách Tiếng Anh Chuyên Ngành', 0);
+('1', 'Sách Kỹ Thuật Lập Trình', 1),
+('10', 'Nhập vai', 0),
+('11', 'Nhanh nhẹn', 0),
+('12', 'Thẻ bài', 0),
+('13', 'Xúc xắc ', 0),
+('14', 'Đồng đội', 0),
+('15', 'Chiến thuật', 0),
+('17', 'Yugioh', 0),
+('2', 'Sách Thuật Toán Và Giải Thuật', 1),
+('3', 'Sách Tiếng Anh Chuyên Ngành', 1),
+('4', 'Sách AI', 1),
+('5', 'Rubik', 0),
+('6', 'Cờ', 0),
+('7', ' Ẩn vai trò', 0),
+('8', 'Đặt thẻ', 0),
+('9', 'Kinh tế', 0);
 
 -- --------------------------------------------------------
 
@@ -167,7 +292,6 @@ INSERT INTO `tbltheloai` (`idTheLoai`, `tenTheLoai`, `HienThi`) VALUES
 -- Cấu trúc bảng cho bảng `tblthongtin`
 --
 
-DROP TABLE IF EXISTS `tblthongtin`;
 CREATE TABLE `tblthongtin` (
   `hovaten` varchar(30) NOT NULL,
   `email` varchar(30) NOT NULL,
@@ -198,6 +322,12 @@ ALTER TABLE `tblchitiethd`
   ADD PRIMARY KEY (`MaHD`,`idSach`),
   ADD KEY `FKCTHDISSACH` (`idSach`),
   ADD KEY `FKCTHDMAHD` (`MaHD`);
+
+--
+-- Chỉ mục cho bảng `tbldangkytaikhoan`
+--
+ALTER TABLE `tbldangkytaikhoan`
+  ADD PRIMARY KEY (`email`);
 
 --
 -- Chỉ mục cho bảng `tblhoadon`
