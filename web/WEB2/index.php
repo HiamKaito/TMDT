@@ -363,72 +363,7 @@
 		</section>
 		<!-- End NEwsletter Area -->
 		<!-- Start Recent Post Area -->
-		<section class="wn__recent__post bg--gray ptb--80">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="section__title text-center">
-							<h2 class="title__be--2"><span class="color--theme">Blog </span>của chúng tôi!</h2>
-							<p>Hãy để lại bình luận của bạn dưới đây!</p>
-						</div>
-					</div>
-				</div>
-				<div class="row mt--50">
-					<div class="col-md-6 col-lg-4 col-sm-12">
-						<div class="post__itam">
-							<div class="content">
-								<h3><a href="#">Những hoạt động quốc tế về BoardGame ở Frankfurt </a></h3>
-								<p>Chúng tôi tự hào công bố phiên bản đầu tiên của tin tức frankfurt.</p>
-								<div class="post__time">
-									<span class="day">Dec 09, 00</span>
-									<div class="post-meta">
-										<ul>
-											<li><a href="#"><i class="bi bi-love"></i>72</a></li>
-											<li><a href="#"><i class="bi bi-chat-bubble"></i>27</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-4 col-sm-12">
-						<div class="post__itam">
-							<div class="content">
-								<h3><a href="#">Việc đọc BoardGame sẽ giúp bạn tiếp thu được những thông tin quan trọng.</a></h3>
-								<p>Tìm ra những thông tin bạn cần để cải thiện sự trải nghiệm của bản thân bạn.	</p>
-								<div class="post__time">
-									<span class="day">Mar 25, 00</span>
-									<div class="post-meta">
-										<ul>
-											<li><a href="#"><i class="bi bi-love"></i>72</a></li>
-											<li><a href="#"><i class="bi bi-chat-bubble"></i>27</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-4 col-sm-12">
-						<div class="post__itam">
-							<div class="content">
-								<h3><a href="#">Hội chợ BoardGame London sẽ được tổ chức một cách thú vị </a></h3>
-								<p>Hội chợ BoardGame London là nơi bạn có thể mua được những quyển BoardGame hay ho và thú vị, hợp với mọi độ tuổi.</p>
-								<div class="post__time">
-									<span class="day">Jan 14, 18</span>
-									<div class="post-meta">
-										<ul>
-											<li><a href="#"><i class="bi bi-love"></i>72</a></li>
-											<li><a href="#"><i class="bi bi-chat-bubble"></i>27</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- End Recent Post Area -->
+		<!-- Start Recent Post Area -->
 
 
 
@@ -440,39 +375,7 @@
 
 		<!-- Footer Area -->
 		<footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
-			<div class="footer-static-top">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="footer__widget footer__menu">
-								<div class="ft__logo">
-									<a href="index.php">
-										<img src="images/logo/3.png" alt="logo">
-									</a>
-									<p>Chơi trước khổ sau thế mới vui - Chúa hề</p>
-								</div>
-								<div class="footer__content">
-									<ul class="social__net social__net--2 d-flex justify-content-center">
-										<li><a href="#"><i class="bi bi-facebook"></i></a></li>
-										<li><a href="#"><i class="bi bi-google"></i></a></li>
-										<li><a href="#"><i class="bi bi-twitter"></i></a></li>
-										<li><a href="#"><i class="bi bi-linkedin"></i></a></li>
-										<li><a href="#"><i class="bi bi-youtube"></i></a></li>
-									</ul>
-									<ul class="mainmenu d-flex justify-content-center">
-										<li><a href="index.php">Đang Hot</a></li>
-										<li><a href="index.php">Tác Phẩm Bán Chạy</a></li>
-										<li><a href="index.php">Tất Cả Sản Phẩm</a></li>
-										<li><a href="index.php">Yêu Thích</a></li>
-										<li><a href="index.php">Blog</a></li>
-										<li><a href="contact.php">Liên Hệ</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			
 			<div class="copyright__wrapper">
 				<div class="container">
 					<div class="row">
@@ -481,11 +384,6 @@
 								<div class="copy__right__inner text-left">
 									<p>Copyright <i class="fa fa-copyright"></i> <a href="https://freethemescloud.com/">Free themes Cloud.</a> All Rights Reserved</p>
 								</div>
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-6 col-sm-12">
-							<div class="payment text-right">
-								<img src="images/icons/payment.png" alt="" />
 							</div>
 						</div>
 					</div>

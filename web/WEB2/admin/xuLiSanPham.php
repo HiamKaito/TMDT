@@ -48,7 +48,7 @@
                                     $result = mysqli_query($conn,$sqlSelect) ;
                                     $tranghientai = $_GET['tranghientai'];
 
-									$sosptrentrang  = 3;
+									$sosptrentrang  = 7;
 									$tongsosanpham = mysqli_num_rows($result);
 									$sotrang = ceil($tongsosanpham / $sosptrentrang);
 									$vitri = ($tranghientai-1)*$sosptrentrang; 
